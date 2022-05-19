@@ -28,6 +28,8 @@ mongoose.connect(process.env.db_connector,
     )
 
 
+app.set('port', process.env.PORT || 5300)
 
-app.listen(4500)
-console.log("listening on port : 4500")
+
+
+app.listen(app.get('port'), () => console.log('listening on port ' + app.get('port')))
